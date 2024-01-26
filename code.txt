@@ -1,0 +1,29 @@
+[paramiter] product_id, series_id
+[GET] https://api-gateway-global.viu.com/api/mobile?r=/vod/product-list&product_id=2277400&series_id=72086&size=1000&platform_flag_label=phone&language_flag_id=4&ut=0&area_id=4&os_flag_id=2&countryCode=TH
+
+[paramiter] ccs_product_id
+[GET] https://api-gateway-global.viu.com/api/playback/distribute?ccs_product_id=ad1b3ef22a6a50c2f6699a75aa157288&platform_flag_label=phone&language_flag_id=4&ut=0&area_id=4&os_flag_id=2&countryCode=TH
+
+
+----
+[paramiter] product_id
+[GET] https://api-gateway-global.viu.com/api/mobile?r=/vod/detail&product_id=2296440&platform_flag_label=phone&language_flag_id=4&ut=0&area_id=4&os_flag_id=2&countryCode=TH
+
+[time] 180 free
+[paramiter] ccs_product_id 
+[GET] https://api-gateway-global.viu.com/api/playback/distribute?ccs_product_id=2eabefc9dec1e4582576c8c9674c0001&duration_start=180&duration=360&platform_flag_label=phone&language_flag_id=4&ut=0&area_id=4&os_flag_id=2&countryCode=TH
+
+[Gen m3u8]
+let save='';
+for(let x=1;x<1000;x++){
+    let id=x.toString();
+    let co=8-id.length;
+    for(let i=0;i<co;i++){
+        id=`0${id}`;
+    }
+    console.log(id);
+    save+=`\n#EXTINF:10,\nhttps://d3o7oi00quuwqu.cloudfront.net/2eabefc9dec1e4582576c8c9674c0001/2eabefc9dec1e4582576c8c9674c0001_Layer1/Period1/live_${id}.ts?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kM283b2kwMHF1dXdxdS5jbG91ZGZyb250Lm5ldC8yZWFiZWZjOWRlYzFlNDU4MjU3NmM4Yzk2NzRjMDAwMS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzA2Mjk4MDk4fX19XX0_&Signature=C~Ko1TVc9JCJqIcXHneUtRJOSgWxfrjtlND2MSydZaqnRAHcWK174AFqPYEzWByTCpz4cFfJqnVZFhsd2DuEeJRDSio6wEgSuiDBEZ4SMPqKRQGh8fYHsZOzA5hPDBXyiyEF2WFIMcBd1wzAwm7vt9nVjtx2WtSr21iU0ow9lWCt1hAAvFaxcdXey2VVG3dEnEcZc1z2WdYJEJRJdRpyBdptjjnM9~UYACccpPpgx1tdQ8ZK2eESSdJrvGSy57-drCOQQHesJkvuurg31CX251q2eHmPsEqsrKf4YmyslyTDbS2Yu~SzAcGommTqShocpDgFIyYnfjnf4uu83eZDoQ__&Key-Pair-Id=APKAJ6Z4RF5IYK7Y3SQQ`
+}
+
+[head] authorization:
+Bearer eyJhbGciOiJBMTI4S1ciLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.g9yFj_xVy8dUOmTqmv39UBik-BdBX8Q8MDXPFhmwx8lXbRDcctH-Rg.L4ReIXKFR7jtBlNqSvW7Fw.2M-zsCUf61Grkw85DqEWWhiJWvsRH-mfopXe4mK1nPcuyTVFOsgxizyU_hcK_C3U1g2egA5bLMmWBjRoJB4cN7ZPolPEceRB5lgFeI2lSwd3Lx-QXUitpBNBnmNzt8ONqPvLUnTHuo-3C4i1SiGsw2pWo5stmt2Cf3aNBbhMAMvEckN1FsIsEk1Ytm7UO66d48TZ9qDPaCLuJvnVKWC2C7oerskaIepDTc18TwhZ3_0.HtFZVwrt3NOO3vBIvwamHQ
